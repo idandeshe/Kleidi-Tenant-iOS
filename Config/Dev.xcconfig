@@ -1,0 +1,6 @@
+// Local server (`npm run dev` in the Kleidi repo). The simulator reaches the Mac's localhost;
+// on a device use the Mac's LAN address, or change it in the app under Profile → Server.
+// `$()` keeps `//` from starting an xcconfig comment.
+KLEIDI_API_BASE_URL = http:/$()/localhost:3000
+KLEIDI_ENVIRONMENT = dev
+PRODUCT_BUNDLE_IDENTIFIER = app.kleidi.tenant.dev

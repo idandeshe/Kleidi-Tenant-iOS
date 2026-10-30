@@ -1,0 +1,2573 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "auth.code.expired": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ο κωδικός έληξε. Ζητήστε νέο κωδικό."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The code has expired. Request a new one."
+          }
+        }
+      }
+    },
+    "auth.code.expiresIn": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ο κωδικός ισχύει για %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Code valid for %@"
+          }
+        }
+      }
+    },
+    "auth.code.resend": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποστολή ξανά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send again"
+          }
+        }
+      }
+    },
+    "auth.code.resendIn": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποστολή ξανά σε %d δ."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send again in %d s"
+          }
+        }
+      }
+    },
+    "auth.code.resent": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σας στείλαμε νέο κωδικό."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We sent you a new code."
+          }
+        }
+      }
+    },
+    "auth.code.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Στείλαμε έναν 6ψήφιο κωδικό στο %@."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We sent a 6-digit code to %@."
+          }
+        }
+      }
+    },
+    "auth.code.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εισαγάγετε τον κωδικό"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter the code"
+          }
+        }
+      }
+    },
+    "auth.code.verify": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επαλήθευση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verify"
+          }
+        }
+      }
+    },
+    "auth.error.badPhone": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ο αριθμός δεν φαίνεται έγκυρος."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That does not look like a valid phone number."
+          }
+        }
+      }
+    },
+    "auth.notice.notATenant": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ο αριθμός αυτός δεν συνδέεται πλέον με ενεργό μισθωτήριο. Επικοινωνήστε με τον διαχειριστή του ακινήτου."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This number is no longer linked to an active lease. Contact your property manager."
+          }
+        }
+      }
+    },
+    "auth.notice.sessionEnded": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η σύνδεσή σας έληξε. Συνδεθείτε ξανά."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your session has ended. Please sign in again."
+          }
+        }
+      }
+    },
+    "auth.phone.countryCode": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κωδικός χώρας"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Country code"
+          }
+        }
+      }
+    },
+    "auth.phone.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χρησιμοποιήστε τον αριθμό κινητού που έχετε δηλώσει στον διαχειριστή του ακινήτου."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use the mobile number your property manager has for you."
+          }
+        }
+      }
+    },
+    "auth.phone.number": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αριθμός κινητού"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phone number"
+          }
+        }
+      }
+    },
+    "auth.phone.placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "69X XXX XXXX"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "69X XXX XXXX"
+          }
+        }
+      }
+    },
+    "auth.phone.send": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποστολή κωδικού"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send code"
+          }
+        }
+      }
+    },
+    "auth.phone.server": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διακομιστής: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server: %@"
+          }
+        }
+      }
+    },
+    "auth.phone.smsOff": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η σύνδεση με SMS δεν είναι διαθέσιμη αυτή τη στιγμή. Δοκιμάστε ξανά αργότερα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign-in by SMS is not available right now. Please try again later."
+          }
+        }
+      }
+    },
+    "auth.phone.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Θα σας στείλουμε έναν 6ψήφιο κωδικό με SMS."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We will text you a 6-digit code."
+          }
+        }
+      }
+    },
+    "auth.phone.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σύνδεση με το κινητό σας"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign in with your phone"
+          }
+        }
+      }
+    },
+    "common.comingSoon": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σύντομα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coming soon"
+          }
+        }
+      }
+    },
+    "common.done": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τέλος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        }
+      }
+    },
+    "common.error": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι πήγε στραβά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Something went wrong"
+          }
+        }
+      }
+    },
+    "common.ok": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "common.retry": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δοκιμάστε ξανά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        }
+      }
+    },
+    "error.code.APP_UPDATE_REQUIRED": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αυτή η έκδοση του Kleidi δεν υποστηρίζεται πλέον. Εγκαταστήστε την τελευταία έκδοση για να συνεχίσετε."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This version of Kleidi is no longer supported. Install the latest version to continue."
+          }
+        }
+      }
+    },
+    "error.code.CODE_EXPIRED": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ο κωδικός έληξε. Ζητήστε νέο κωδικό."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The code has expired. Request a new one."
+          }
+        }
+      }
+    },
+    "error.code.INVALID_CODE": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ο κωδικός δεν είναι σωστός. Ελέγξτε τον και δοκιμάστε ξανά."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That code is not right. Check it and try again."
+          }
+        }
+      }
+    },
+    "error.code.NOT_A_TENANT": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ο αριθμός αυτός δεν συνδέεται με ενεργό μισθωτήριο. Επικοινωνήστε με τον διαχειριστή του ακινήτου."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This number is not linked to an active lease. Contact your property manager."
+          }
+        }
+      }
+    },
+    "error.code.SMS_NOT_CONFIGURED": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η σύνδεση με SMS δεν είναι διαθέσιμη αυτή τη στιγμή. Δοκιμάστε ξανά αργότερα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign-in by SMS is not available right now. Please try again later."
+          }
+        }
+      }
+    },
+    "error.code.TOKEN_EXPIRED": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η σύνδεσή σας έληξε. Συνδεθείτε ξανά."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your session has expired. Please sign in again."
+          }
+        }
+      }
+    },
+    "error.code.TOKEN_REVOKED": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποσυνδεθήκατε από αυτή τη συσκευή. Συνδεθείτε ξανά."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You were signed out on this device. Please sign in again."
+          }
+        }
+      }
+    },
+    "error.code.TOO_MANY_ATTEMPTS": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πολλές λανθασμένες προσπάθειες. Ζητήστε νέο κωδικό."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Too many wrong attempts. Request a new code."
+          }
+        }
+      }
+    },
+    "error.decoding": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το Kleidi έστειλε δεδομένα που αυτή η έκδοση της εφαρμογής δεν αναγνωρίζει. Ενημερώστε την εφαρμογή."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kleidi sent something this version of the app does not understand. Please update the app."
+          }
+        }
+      }
+    },
+    "error.notSignedIn": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Παρακαλούμε συνδεθείτε."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please sign in."
+          }
+        }
+      }
+    },
+    "error.offline": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η σύνδεση με το Kleidi. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not reach Kleidi. Check your connection and try again."
+          }
+        }
+      }
+    },
+    "error.server": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι πήγε στραβά από τη μεριά μας. Δοκιμάστε ξανά σε λίγο."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Something went wrong on our side. Please try again in a moment."
+          }
+        }
+      }
+    },
+    "floor.basement": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Υπόγειο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basement"
+          }
+        }
+      }
+    },
+    "floor.ground": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ισόγειο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ground floor"
+          }
+        }
+      }
+    },
+    "floor.numbered": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ος όροφος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ floor"
+          }
+        }
+      }
+    },
+    "floor.semi_basement": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ημιυπόγειο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semi-basement"
+          }
+        }
+      }
+    },
+    "floor.upper_ground": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Υπερυψωμένο ισόγειο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upper ground floor"
+          }
+        }
+      }
+    },
+    "home.greeting": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Γεια σας, %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hello, %@"
+          }
+        }
+      }
+    },
+    "home.issue.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενημερώστε τον διαχειριστή για ό,τι χρειάζεται επιδιόρθωση."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tell your property manager what needs fixing."
+          }
+        }
+      }
+    },
+    "home.issue.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι χάλασε; Δηλώστε βλάβη"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Something broken? Report an issue"
+          }
+        }
+      }
+    },
+    "home.lease.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το μισθωτήριό σας"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your lease"
+          }
+        }
+      }
+    },
+    "home.noLease.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Όταν ο διαχειριστής του ακινήτου συνδέσει ένα μισθωτήριο με τον αριθμό σας, θα εμφανιστεί εδώ."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When your property manager links a lease to your number, it will appear here."
+          }
+        }
+      }
+    },
+    "home.noLease.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχει μισθωτήριο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No lease yet"
+          }
+        }
+      }
+    },
+    "home.payOnline.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πληρωμή με κάρτα ή τράπεζα μέσα από την εφαρμογή."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card and bank payments from the app."
+          }
+        }
+      }
+    },
+    "home.payOnline.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Online πληρωμή"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pay online"
+          }
+        }
+      }
+    },
+    "home.rent.due": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έως %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Due %@"
+          }
+        }
+      }
+    },
+    "home.rent.dueDay": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έως τις %@ κάθε μήνα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Due on the %@"
+          }
+        }
+      }
+    },
+    "home.rent.for": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενοίκιο %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent for %@"
+          }
+        }
+      }
+    },
+    "home.rent.label": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενοίκιο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent"
+          }
+        }
+      }
+    },
+    "home.rent.paidByTransfer": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πλήρωσα με τραπεζικό έμβασμα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I paid by bank transfer"
+          }
+        }
+      }
+    },
+    "home.rent.paidByTransfer.soon": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πληρώσατε ήδη; Δηλώστε το έμβασμα και επισυνάψτε το αποδεικτικό της τράπεζας."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paid already? Declare the transfer and attach the bank confirmation."
+          }
+        }
+      }
+    },
+    "home.rent.upcoming": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Νέο ενοίκιο %1$@ από %2$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New rent %1$@ from %2$@"
+          }
+        }
+      }
+    },
+    "home.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το μισθωτήριό μου"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "My lease"
+          }
+        }
+      }
+    },
+    "issues.comingSoon": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η δήλωση βλαβών έρχεται σε επόμενη έκδοση."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issue reporting is coming in a later release."
+          }
+        }
+      }
+    },
+    "language.continue": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Συνέχεια"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        }
+      }
+    },
+    "language.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μπορείτε να την αλλάξετε αργότερα από το προφίλ σας."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can change it later in your profile."
+          }
+        }
+      }
+    },
+    "language.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλέξτε γλώσσα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your language"
+          }
+        }
+      }
+    },
+    "lease.address": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διεύθυνση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address"
+          }
+        }
+      }
+    },
+    "lease.address.unknown": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διεύθυνση μη διαθέσιμη"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address not available"
+          }
+        }
+      }
+    },
+    "lease.deposit": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εγγύηση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deposit"
+          }
+        }
+      }
+    },
+    "lease.endDate": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Λήξη"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "End"
+          }
+        }
+      }
+    },
+    "lease.monthlyRent": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μηνιαίο ενοίκιο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly rent"
+          }
+        }
+      }
+    },
+    "lease.months.one": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d μήνας"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d month"
+          }
+        }
+      }
+    },
+    "lease.months.other": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d μήνες"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d months"
+          }
+        }
+      }
+    },
+    "lease.noticeDeadline": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προθεσμία ειδοποίησης"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notice by"
+          }
+        }
+      }
+    },
+    "lease.noticePeriod": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προειδοποίηση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notice period"
+          }
+        }
+      }
+    },
+    "lease.openEnded": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αορίστου χρόνου"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open-ended"
+          }
+        }
+      }
+    },
+    "lease.paymentDay": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ημέρα πληρωμής"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment day"
+          }
+        }
+      }
+    },
+    "lease.paymentDay.value": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έως τις %@ του μήνα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The %@ of the month"
+          }
+        }
+      }
+    },
+    "lease.paymentMethod": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τρόπος πληρωμής"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment method"
+          }
+        }
+      }
+    },
+    "lease.paymentMethod.bank_transfer": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τραπεζικό έμβασμα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bank transfer"
+          }
+        }
+      }
+    },
+    "lease.paymentMethod.cash": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μετρητά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cash"
+          }
+        }
+      }
+    },
+    "lease.paymentMethod.cheques": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιταγές"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cheques"
+          }
+        }
+      }
+    },
+    "lease.paymentMethod.other": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Άλλο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        }
+      }
+    },
+    "lease.paymentMethod.standing_order": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πάγια εντολή"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standing order"
+          }
+        }
+      }
+    },
+    "lease.startDate": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έναρξη"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
+          }
+        }
+      }
+    },
+    "lease.status.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενεργό"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Active"
+          }
+        }
+      }
+    },
+    "lease.status.ended": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έληξε"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ended"
+          }
+        }
+      }
+    },
+    "lease.status.pastEnd": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μετά τη λήξη"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Past end date"
+          }
+        }
+      }
+    },
+    "lease.status.terminated": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Λύθηκε"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminated"
+          }
+        }
+      }
+    },
+    "lease.status.upcoming": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επερχόμενο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upcoming"
+          }
+        }
+      }
+    },
+    "profile.email": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email"
+          }
+        }
+      }
+    },
+    "profile.language": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Γλώσσα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        }
+      }
+    },
+    "profile.language.footer": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τα μηνύματα από το Kleidi θα είναι σε αυτή τη γλώσσα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messages from Kleidi will be in this language."
+          }
+        }
+      }
+    },
+    "profile.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Όνομα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
+        }
+      }
+    },
+    "profile.phone": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κινητό"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phone"
+          }
+        }
+      }
+    },
+    "profile.server": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διακομιστής"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server"
+          }
+        }
+      }
+    },
+    "profile.server.current": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τρέχων: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current: %@"
+          }
+        }
+      }
+    },
+    "profile.server.reset": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επαναφορά προεπιλεγμένου διακομιστή"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to the default server"
+          }
+        }
+      }
+    },
+    "profile.server.use": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Χρήση αυτού του διακομιστή"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use this server"
+          }
+        }
+      }
+    },
+    "profile.signOut": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποσύνδεση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign out"
+          }
+        }
+      }
+    },
+    "profile.signOutEverywhere": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποσύνδεση από όλες τις συσκευές"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign out everywhere"
+          }
+        }
+      }
+    },
+    "profile.signOutEverywhere.confirm": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Θα αποσυνδεθείτε από όλες τις συσκευές στις οποίες χρησιμοποιείτε το Kleidi."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This signs you out on every device where you use Kleidi."
+          }
+        }
+      }
+    },
+    "profile.version": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kleidi %@ (%d)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kleidi %@ (%d)"
+          }
+        }
+      }
+    },
+    "rent.confirmedByWire": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το έμβασμα επιβεβαιώθηκε από τον ιδιοκτήτη"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wire confirmed by property owner"
+          }
+        }
+      }
+    },
+    "rent.declare": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πλήρωσα με τραπεζικό έμβασμα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I paid by bank transfer"
+          }
+        }
+      }
+    },
+    "rent.declareAgain": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δηλώστε ξανά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Declare again"
+          }
+        }
+      }
+    },
+    "rent.declaredOn": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δηλώθηκε %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Declared %@"
+          }
+        }
+      }
+    },
+    "rent.nothingToDeclare": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχει κάτι να δηλώσετε — όλοι οι μήνες είναι πληρωμένοι ή ήδη δηλωμένοι."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing to declare — every month is paid or already declared."
+          }
+        }
+      }
+    },
+    "rent.paidOn": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πληρώθηκε %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paid %@"
+          }
+        }
+      }
+    },
+    "rent.proofUnavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το αρχείο δεν μπορεί να εμφανιστεί εδώ."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This file cannot be shown here."
+          }
+        }
+      }
+    },
+    "rent.rejected": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το έμβασμα δεν επιβεβαιώθηκε — επικοινωνήστε με τη διαχείριση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wire not confirmed — please contact management"
+          }
+        }
+      }
+    },
+    "rent.rejectedNote": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σημείωση διαχείρισης: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Note from management: %@"
+          }
+        }
+      }
+    },
+    "rent.status.declared": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δηλώθηκε έμβασμα, αναμένεται επιβεβαίωση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wire declared, waiting for confirmation"
+          }
+        }
+      }
+    },
+    "rent.status.due": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προς πληρωμή"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Due"
+          }
+        }
+      }
+    },
+    "rent.status.overdue": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εκπρόθεσμο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Overdue"
+          }
+        }
+      }
+    },
+    "rent.status.paid": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πληρωμένο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paid"
+          }
+        }
+      }
+    },
+    "rent.status.upcoming": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επερχόμενο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Upcoming"
+          }
+        }
+      }
+    },
+    "rent.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενοίκιο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent"
+          }
+        }
+      }
+    },
+    "rent.viewProof": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προβολή αποδεικτικού"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View proof"
+          }
+        }
+      }
+    },
+    "tab.home": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αρχική"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
+          }
+        }
+      }
+    },
+    "tab.issues": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Βλάβες"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issues"
+          }
+        }
+      }
+    },
+    "tab.payments": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πληρωμές"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payments"
+          }
+        }
+      }
+    },
+    "tab.profile": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προφίλ"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profile"
+          }
+        }
+      }
+    },
+    "update.action": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενημέρωση του Kleidi"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update Kleidi"
+          }
+        }
+      }
+    },
+    "update.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αυτή η έκδοση του Kleidi δεν υποστηρίζεται πλέον. Εγκαταστήστε την τελευταία έκδοση για να συνεχίσετε."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This version of Kleidi is no longer supported. Install the latest version to continue."
+          }
+        }
+      }
+    },
+    "update.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Απαιτείται ενημέρωση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update required"
+          }
+        }
+      }
+    },
+    "wire.amountHint": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενοίκιο για τους επιλεγμένους μήνες: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent for the selected months: %@"
+          }
+        }
+      }
+    },
+    "wire.amountLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ποσό εμβάσματος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amount transferred"
+          }
+        }
+      }
+    },
+    "wire.amountRequired": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Συμπληρώστε το ποσό που μεταφέρατε."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please enter the amount you transferred."
+          }
+        }
+      }
+    },
+    "wire.backHome": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πίσω στην αρχική"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to home"
+          }
+        }
+      }
+    },
+    "wire.cancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Άκυρο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
+    "wire.dateLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ημερομηνία εμβάσματος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transfer date"
+          }
+        }
+      }
+    },
+    "wire.dateRequired": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Συμπληρώστε την ημερομηνία του εμβάσματος."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please enter the transfer date."
+          }
+        }
+      }
+    },
+    "wire.doneBody": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ευχαριστούμε. Ο διαχειριστής θα ελέγξει το έμβασμα και θα το επιβεβαιώσει — θα δείτε «Το έμβασμα επιβεβαιώθηκε από τον ιδιοκτήτη» στον μήνα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thank you. Your property manager will check the transfer and confirm it — you will see \"Wire confirmed by property owner\" on the month."
+          }
+        }
+      }
+    },
+    "wire.doneTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το έμβασμα δηλώθηκε"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wire declared"
+          }
+        }
+      }
+    },
+    "wire.intro": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενημερώστε τον διαχειριστή ποιο ενοίκιο πληρώσατε και επισυνάψτε το αποδεικτικό της τράπεζας. Θα το ελέγξει και θα το επιβεβαιώσει."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tell your property manager which rent you paid and attach the bank confirmation. They will check it and confirm."
+          }
+        }
+      }
+    },
+    "wire.monthsHint": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλέξτε έναν ή περισσότερους μήνες που καλύπτει αυτό το έμβασμα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pick one or more months covered by this transfer."
+          }
+        }
+      }
+    },
+    "wire.monthsLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ποιους μήνες πληρώσατε;"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which months did you pay?"
+          }
+        }
+      }
+    },
+    "wire.monthsRequired": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλέξτε τουλάχιστον έναν μήνα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please pick at least one month."
+          }
+        }
+      }
+    },
+    "wire.proof.camera": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Λήψη φωτογραφίας"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take a photo"
+          }
+        }
+      }
+    },
+    "wire.proof.files": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αρχεία"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Files"
+          }
+        }
+      }
+    },
+    "wire.proof.photos": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Βιβλιοθήκη φωτογραφιών"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo library"
+          }
+        }
+      }
+    },
+    "wire.proofChange": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αλλαγή αρχείου"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Change file"
+          }
+        }
+      }
+    },
+    "wire.proofHeic": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Οι φωτογραφίες HEIC δεν υποστηρίζονται εδώ. Εξάγετε τη φωτογραφία ως JPG ή χρησιμοποιήστε την εφαρμογή Kleidi Tenant στο κινητό σας."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HEIC photos are not supported here. Please export the photo as JPG, or use the Kleidi Tenant app on your phone."
+          }
+        }
+      }
+    },
+    "wire.proofHint": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Στιγμιότυπο, φωτογραφία ή PDF της επιβεβαίωσης της τράπεζας — JPG, PNG, WebP ή PDF, έως 15 MB."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A screenshot, photo or PDF of the bank confirmation — JPG, PNG, WebP or PDF, up to 15 MB."
+          }
+        }
+      }
+    },
+    "wire.proofLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποδεικτικό εμβάσματος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proof of transfer"
+          }
+        }
+      }
+    },
+    "wire.proofPick": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλογή αρχείου"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a file"
+          }
+        }
+      }
+    },
+    "wire.proofRequired": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επισυνάψτε το αποδεικτικό της τράπεζας."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please attach the bank confirmation."
+          }
+        }
+      }
+    },
+    "wire.proofTooLarge": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το αρχείο ξεπερνά τα 15 MB."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The file is larger than 15 MB."
+          }
+        }
+      }
+    },
+    "wire.proofUnreadable": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν ήταν δυνατή η ανάγνωση του αρχείου. Δοκιμάστε άλλο αρχείο."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not read the file. Please try another one."
+          }
+        }
+      }
+    },
+    "wire.referenceLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αιτιολογία (προαιρετικά)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment reference (optional)"
+          }
+        }
+      }
+    },
+    "wire.referencePlaceholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "π.χ. Ενοίκιο Οκτωβρίου — Παπαδόπουλος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. Rent October — Papadopoulos"
+          }
+        }
+      }
+    },
+    "wire.submit": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποστολή δήλωσης"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send declaration"
+          }
+        }
+      }
+    },
+    "wire.submitting": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποστολή…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sending…"
+          }
+        }
+      }
+    },
+    "wire.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δήλωση τραπεζικού εμβάσματος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Declare a bank transfer"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

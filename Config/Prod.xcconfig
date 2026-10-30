@@ -1,0 +1,5 @@
+// Production (APP_BASE_URL in the server's env/.env.prod). The tenant API lives on the same
+// Cloud Run service as the staff app, under /api/tenant/*.
+KLEIDI_API_BASE_URL = https:/$()/kleidi.seamphony.io
+KLEIDI_ENVIRONMENT = prod
+PRODUCT_BUNDLE_IDENTIFIER = app.kleidi.tenant

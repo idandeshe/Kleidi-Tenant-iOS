@@ -1,0 +1,23 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "NSCameraUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το Kleidi χρησιμοποιεί την κάμερα για να φωτογραφίσετε το αποδεικτικό του τραπεζικού εμβάσματος."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleidi uses the camera to photograph your bank-transfer confirmation."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,0 +1,4 @@
+// TODO: set to the stage Cloud Run URL (not recorded in the server repo).
+KLEIDI_API_BASE_URL = https:/$()/stage.kleidi.example.com
+KLEIDI_ENVIRONMENT = stage
+PRODUCT_BUNDLE_IDENTIFIER = app.kleidi.tenant.stage
