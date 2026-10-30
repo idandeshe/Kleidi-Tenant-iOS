@@ -6,12 +6,18 @@ import TenantCore
 /// "Received · date", then the messages — the tenant's on the right in accent, the property
 /// manager's on the left, status changes centred. While the issue is open a composer sends a
 /// text and / or up to three photos; once resolved or closed the composer gives way to a note
-/// and a "Report it again" link. Opening the thread marks it seen on the server.
+/// and a "Report it again" link. Opening the thread marks it seen on the server. While the
+/// thread is on screen and the app is active it re-reads itself every few seconds, so the
+/// property manager's replies and status changes appear on their own.
 struct IssueDetailView: View {
     @Environment(AppModel.self) private var app
     @Environment(AppNavigation.self) private var navigation
     @Environment(\.l10n) private var l10n
+    @Environment(\.scenePhase) private var scenePhase
     let id: String
+
+    /// How often the open thread is re-read (the web and Android apps use the same).
+    private static let pollInterval: Duration = .seconds(5)
 
     @State private var detail: TenantIssueDetail?
     @State private var error: String?
@@ -44,6 +50,17 @@ struct IssueDetailView: View {
         .navigationTitle(l10n["issues.detail.title"])
         .navigationBarTitleDisplayMode(.inline)
         .task { if detail == nil { await load() } }
+        // Cancelled when the thread leaves the screen; skipped while the app is in the background.
+        .task(id: id) {
+            while !Task.isCancelled {
+                try? await Task.sleep(for: Self.pollInterval)
+                guard !Task.isCancelled, scenePhase == .active else { continue }
+                await poll()
+            }
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active, detail != nil { Task { await poll() } }
+        }
         .sheet(item: $viewing) { IssuePhotoViewer(issueId: $0.issueId, documentId: $0.documentId) }
         .proofPicker($pickerSource, rules: .issuePhoto, onPick: { picked in
             guard replyPhotos.count < IssuePhotoRules.maxReplyPhotos else { return }
@@ -190,12 +207,24 @@ struct IssueDetailView: View {
     private func load() async {
         error = nil
         do {
-            detail = try await app.client.issue(id: id)
-            // Opening the thread marks it seen: let the list drop its "new reply" dot.
-            navigation.issuesDidChange()
+            apply(try await app.client.issue(id: id))
         } catch {
             if detail == nil { self.error = l10n.message(for: error) }
         }
+    }
+
+    /// A silent re-read: what comes back replaces the thread, a failure changes nothing on screen.
+    private func poll() async {
+        guard let fresh = try? await app.client.issue(id: id) else { return }
+        apply(fresh)
+    }
+
+    /// Shows the thread. The list underneath reloads (its "new reply" dot, the status pill) when the
+    /// thread was first opened — that marks it seen — or when something in it changed, not on every poll.
+    private func apply(_ fresh: TenantIssueDetail) {
+        let changed = detail.map { $0.messages.count != fresh.messages.count || $0.status != fresh.status } ?? true
+        detail = fresh
+        if changed { navigation.issuesDidChange() }
     }
 
     private func send() async {

@@ -108,9 +108,12 @@ struct IssuesView: View {
             leases = loaded
             guard let lease = loaded.currentLease else {
                 issues = nil
+                navigation.issuesDidLoad([])
                 return
             }
-            issues = try await app.client.issues(leaseId: lease.id)
+            let loadedIssues = try await app.client.issues(leaseId: lease.id)
+            issues = loadedIssues
+            navigation.issuesDidLoad(loadedIssues)
         } catch {
             // Keep what is already on screen; report only when there is nothing to show.
             if issues == nil || leases == nil { self.error = l10n.message(for: error) }

@@ -109,6 +109,13 @@ struct TenantIssuesResponse: Decodable, Sendable {
     let data: [TenantIssue]
 }
 
+extension Array where Element == TenantIssue {
+    /// Issues with a staff reply the tenant has not opened yet — the count on the Issues tab.
+    public var unreadCount: Int {
+        filter(\.tenantUnread).count
+    }
+}
+
 /// What the tenant fills in on "Report an issue" (`ReportTenantIssueDto`); the photos travel beside it.
 public struct ReportIssueDraft: Sendable, Equatable {
     public var category: TenantIssueCategory

@@ -1,10 +1,12 @@
 import Foundation
 import Observation
+import TenantAPI
 
 /// The tab bar's selection plus the cross-screen signals the app needs: a declaration was
 /// sent, so Home and Payments reload the rent months; an issue was reported, answered or
-/// opened, so the Issues list reloads. Lives in the environment under `MainTabView` (the
-/// Declare and Report screens are pushed inside a tab and end by switching tabs).
+/// opened, so the Issues list reloads; the Issues tab's badge (unread replies from the property
+/// manager). Lives in the environment under `MainTabView` (the Declare and Report screens are
+/// pushed inside a tab and end by switching tabs).
 @Observable
 @MainActor
 final class AppNavigation {
@@ -17,6 +19,9 @@ final class AppNavigation {
     private(set) var rentRevision = 0
     /// Bumped after a report, a reply or an opened thread (the "new reply" dot clears); the list `.task(id:)`s on it.
     private(set) var issuesRevision = 0
+    /// Issues with a reply the tenant has not opened — the number on the Issues tab (0 hides it).
+    /// Set from whichever screen last loaded the list, and by `MainTabView` at launch / on foreground.
+    private(set) var unreadIssueCount = 0
 
     func rentDidChange() {
         rentRevision += 1
@@ -24,6 +29,11 @@ final class AppNavigation {
 
     func issuesDidChange() {
         issuesRevision += 1
+    }
+
+    /// The list was (re)loaded: the tab badge follows it.
+    func issuesDidLoad(_ issues: [TenantIssue]) {
+        unreadIssueCount = issues.unreadCount
     }
 
     /// Shows one issue's thread in the Issues tab, straight over the list (whatever that tab

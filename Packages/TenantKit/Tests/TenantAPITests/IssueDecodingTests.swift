@@ -43,6 +43,12 @@ import TenantCore
         #expect(TenantFormatter.date(closed.closedAt, timeZone: utc) == "01/08/2026")
     }
 
+    @Test func unreadCountIsTheNumberOfIssuesWithAnUnopenedReply() throws {
+        let issues = try TenantJSON.decoder().decode(TenantIssuesResponse.self, from: json(issuesListJSON())).data
+        #expect(issues.unreadCount == 1)
+        #expect([TenantIssue]().unreadCount == 0)
+    }
+
     @Test func decodesTheDetailAsIssuePlusMessages() throws {
         let detail = try TenantJSON.decoder().decode(TenantIssueDetail.self, from: json(issueDetailJSON()))
         #expect(detail.id == "i1")
