@@ -987,19 +987,818 @@
         }
       }
     },
-    "issues.comingSoon": {
+    "issues.category.building": {
       "extractionState": "manual",
       "localizations": {
         "el": {
           "stringUnit": {
             "state": "translated",
-            "value": "Η δήλωση βλαβών έρχεται σε επόμενη έκδοση."
+            "value": "Κτίριο"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Issue reporting is coming in a later release."
+            "value": "Building"
+          }
+        }
+      }
+    },
+    "issues.category.doors_locks": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Πόρτες / κλειδαριές"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doors / locks"
+          }
+        }
+      }
+    },
+    "issues.category.electrical": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ηλεκτρολογικά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Electrical"
+          }
+        }
+      }
+    },
+    "issues.category.heating_ac": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Θέρμανση / κλιματισμός"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heating / AC"
+          }
+        }
+      }
+    },
+    "issues.category.other": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Άλλο"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        }
+      }
+    },
+    "issues.category.plumbing": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Υδραυλικά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plumbing"
+          }
+        }
+      }
+    },
+    "issues.closedOn": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · έκλεισε %2$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · closed %2$@"
+          }
+        }
+      }
+    },
+    "issues.composer.placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Γράψτε ένα μήνυμα…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Write a message…"
+          }
+        }
+      }
+    },
+    "issues.composer.send": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποστολή"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send"
+          }
+        }
+      }
+    },
+    "issues.detail.closed": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έκλεισε από τη διαχείριση"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Closed by management"
+          }
+        }
+      }
+    },
+    "issues.detail.closedBy": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έκλεισε από τη διαχείριση · %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Closed by management · %@"
+          }
+        }
+      }
+    },
+    "issues.detail.received": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Παραλήφθηκε · %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Received · %@"
+          }
+        }
+      }
+    },
+    "issues.detail.resolvedOn": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλύθηκε στις %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolved on %@"
+          }
+        }
+      }
+    },
+    "issues.detail.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Βλάβη"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Issue"
+          }
+        }
+      }
+    },
+    "issues.empty.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Κάτι χάλασε; Δηλώστε το και ο διαχειριστής του ακινήτου θα το αναλάβει."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Something broken? Report it and your property manager will take it from there."
+          }
+        }
+      }
+    },
+    "issues.empty.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δεν υπάρχουν βλάβες"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No issues yet"
+          }
+        }
+      }
+    },
+    "issues.newReply": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Νέα απάντηση από τον διαχειριστή του ακινήτου"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New reply from your property manager"
+          }
+        }
+      }
+    },
+    "issues.photoHint": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μόνο φωτογραφίες — JPG, PNG ή WebP, έως 10 MB η καθεμία."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photos only — JPG, PNG or WebP, up to 10 MB each."
+          }
+        }
+      }
+    },
+    "issues.photoTooLarge": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η φωτογραφία ξεπερνά τα 10 MB."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The photo is larger than 10 MB."
+          }
+        }
+      }
+    },
+    "issues.photoUnavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η φωτογραφία δεν μπορεί να εμφανιστεί."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This photo cannot be shown."
+          }
+        }
+      }
+    },
+    "issues.repliesClosed": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μόλις η βλάβη επιλυθεί, οι απαντήσεις κλείνουν. Υπάρχει ακόμη πρόβλημα; Δηλώστε την ξανά."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Once the issue is resolved, replies close. Still a problem? Report it again."
+          }
+        }
+      }
+    },
+    "issues.report": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δήλωση βλάβης"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Report an issue"
+          }
+        }
+      }
+    },
+    "issues.report.addPhoto": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προσθήκη φωτογραφίας"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a photo"
+          }
+        }
+      }
+    },
+    "issues.report.categoryLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τι αφορά;"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is it about?"
+          }
+        }
+      }
+    },
+    "issues.report.categoryRequired": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλέξτε τι αφορά η βλάβη."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please pick what the issue is about."
+          }
+        }
+      }
+    },
+    "issues.report.descriptionLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Περιγράψτε το πρόβλημα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Describe the problem"
+          }
+        }
+      }
+    },
+    "issues.report.descriptionPlaceholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "π.χ. Η βρύση της κουζίνας στάζει από τη Δευτέρα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. The kitchen tap has been dripping since Monday."
+          }
+        }
+      }
+    },
+    "issues.report.descriptionRequired": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Περιγράψτε το πρόβλημα."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please describe the problem."
+          }
+        }
+      }
+    },
+    "issues.report.photosHint": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Προαιρετικά, έως %d"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optional, up to %d"
+          }
+        }
+      }
+    },
+    "issues.report.photosLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Φωτογραφίες"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photos"
+          }
+        }
+      }
+    },
+    "issues.report.removePhoto": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αφαίρεση φωτογραφίας"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove photo"
+          }
+        }
+      }
+    },
+    "issues.report.submit": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποστολή στον διαχειριστή"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send to property manager"
+          }
+        }
+      }
+    },
+    "issues.report.submitting": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Αποστολή…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sending…"
+          }
+        }
+      }
+    },
+    "issues.report.urgent": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Είναι επείγον (διαρροή, διακοπή ρεύματος, χωρίς θέρμανση, κλείδωμα απ’ έξω)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It is urgent (leak, no power, no heating, lock-out)"
+          }
+        }
+      }
+    },
+    "issues.reportAgain": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δηλώστε την ξανά"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Report it again"
+          }
+        }
+      }
+    },
+    "issues.reportedOn": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · δηλώθηκε %2$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · reported %2$@"
+          }
+        }
+      }
+    },
+    "issues.resolvedOn": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · επιλύθηκε %2$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · resolved %2$@"
+          }
+        }
+      }
+    },
+    "issues.section.open": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ανοιχτές"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open"
+          }
+        }
+      }
+    },
+    "issues.section.resolved": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλυμένες"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolved"
+          }
+        }
+      }
+    },
+    "issues.status.closed": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Έκλεισε"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Closed"
+          }
+        }
+      }
+    },
+    "issues.status.in_progress": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Σε εξέλιξη"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In progress"
+          }
+        }
+      }
+    },
+    "issues.status.new": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Παραλήφθηκε"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Received"
+          }
+        }
+      }
+    },
+    "issues.status.resolved": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επιλύθηκε"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolved"
+          }
+        }
+      }
+    },
+    "issues.thread.photo": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Φωτογραφία"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo"
+          }
+        }
+      }
+    },
+    "issues.thread.staff": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Διαχειριστής ακινήτου"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Property manager"
+          }
+        }
+      }
+    },
+    "issues.thread.statusChanged": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η κατάσταση άλλαξε σε %1$@ · %2$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status changed to %1$@ · %2$@"
+          }
+        }
+      }
+    },
+    "issues.thread.you": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Εσείς"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You"
+          }
+        }
+      }
+    },
+    "issues.urgent": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Επείγον"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Urgent"
           }
         }
       }

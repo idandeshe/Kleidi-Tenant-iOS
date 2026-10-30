@@ -7,13 +7,13 @@
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Το Kleidi χρησιμοποιεί την κάμερα για να φωτογραφίσετε το αποδεικτικό του τραπεζικού εμβάσματος."
+            "value" : "Το Kleidi χρησιμοποιεί την κάμερα για να φωτογραφίσετε το αποδεικτικό του τραπεζικού εμβάσματος ή μια βλάβη στο σπίτι σας."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kleidi uses the camera to photograph your bank-transfer confirmation."
+            "value" : "Kleidi uses the camera to photograph your bank-transfer confirmation or an issue in your home."
           }
         }
       }

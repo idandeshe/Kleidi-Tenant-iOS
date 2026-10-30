@@ -15,6 +15,15 @@ public enum TenantFormatter {
         return "\(pad(c.day))/\(pad(c.month))/\(c.year ?? 0)"
     }
 
+    /// `DD/MM/YYYY HH:mm` (24h) in the viewer's time zone — the time stamps of an issue thread.
+    public static func dateTime(_ value: Date?, timeZone: TimeZone = .current) -> String {
+        guard let value else { return "" }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = timeZone
+        let c = calendar.dateComponents([.hour, .minute], from: value)
+        return "\(date(value, timeZone: timeZone)) \(pad(c.hour)):\(pad(c.minute))"
+    }
+
     /// "October 2026" / "Οκτωβρίου 2026" (genitive, as in "Ενοίκιο Οκτωβρίου 2026").
     public static func monthYear(_ value: Date, language: AppLanguage, timeZone: TimeZone = .current) -> String {
         let formatter = DateFormatter()

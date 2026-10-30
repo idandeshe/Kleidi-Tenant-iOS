@@ -300,8 +300,8 @@ struct DeclareWireView: View {
     }
 }
 
-/// A field caption, optionally with a hint under it.
-private struct FieldLabel: View {
+/// A field caption, optionally with a hint under it (also the Report-an-issue form).
+struct FieldLabel: View {
     let text: String
     var hint: String? = nil
 

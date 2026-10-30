@@ -40,7 +40,7 @@ struct HomeView: View {
                         }
                         PayOnlineCard()
                         LeaseDetailsCard(lease: lease)
-                        ReportIssueRow()
+                        ReportIssueRow(leaseId: lease.id)
                     } else {
                         ContentUnavailableView(
                             l10n["home.noLease.title"], systemImage: "house",
@@ -214,11 +214,13 @@ private struct LeaseDetailsCard: View {
     }
 }
 
+/// "Something broken? Report an issue" — opens the form for the lease on screen.
 private struct ReportIssueRow: View {
     @Environment(\.l10n) private var l10n
+    let leaseId: String
 
     var body: some View {
-        NavigationLink(value: Route.reportIssue) {
+        NavigationLink(value: Route.reportIssue(leaseId: leaseId)) {
             HStack(spacing: 14) {
                 Image(systemName: "wrench.and.screwdriver")
                     .font(.title2)

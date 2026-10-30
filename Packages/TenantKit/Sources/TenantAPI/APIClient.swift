@@ -17,15 +17,19 @@ public struct APIRequest: Sendable {
     public var method: Method
     /// Path under `/api`, e.g. `/tenant/leases`.
     public var path: String
+    /// Query string items (`?leaseId=…`); empty for most calls.
+    public var query: [URLQueryItem]
     public var body: Data?
     /// `Content-Type` of `body`; JSON unless set (a multipart upload sets its boundary here).
     public var contentType: String?
     /// Sends `Authorization: Bearer` and refreshes the session when needed.
     public var requiresAuth: Bool
 
-    public init(_ method: Method = .get, _ path: String, body: Data? = nil, contentType: String? = nil, requiresAuth: Bool = true) {
+    public init(_ method: Method = .get, _ path: String, query: [URLQueryItem] = [], body: Data? = nil,
+                contentType: String? = nil, requiresAuth: Bool = true) {
         self.method = method
         self.path = path
+        self.query = query
         self.body = body
         self.contentType = contentType
         self.requiresAuth = requiresAuth
@@ -120,6 +124,9 @@ public actor APIClient {
     private func perform(_ request: APIRequest, accessToken: String?) async throws -> (Data, HTTPURLResponse) {
         var url = baseURL.appendingPathComponent("api")
         url.append(path: request.path.trimmingCharacters(in: CharacterSet(charactersIn: "/")))
+        if !request.query.isEmpty {
+            url.append(queryItems: request.query)
+        }
 
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue

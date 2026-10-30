@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Home · Payments · Issues · Profile. Issues is a placeholder until its release.
+/// Home · Payments · Issues · Profile.
 struct MainTabView: View {
     @Environment(\.l10n) private var l10n
     @State private var navigation = AppNavigation()
@@ -20,8 +20,9 @@ struct MainTabView: View {
             .tabItem { Label(l10n["tab.payments"], systemImage: "creditcard") }
             .tag(AppNavigation.Tab.payments)
 
-            NavigationStack {
-                ComingSoonView(titleKey: "tab.issues", bodyKey: "issues.comingSoon", icon: "wrench.and.screwdriver")
+            // Path-driven: a report sent from Home or from the list lands on its new thread.
+            NavigationStack(path: $navigation.issuesPath) {
+                IssuesView().withTenantDestinations()
             }
             .tabItem { Label(l10n["tab.issues"], systemImage: "wrench.and.screwdriver") }
             .tag(AppNavigation.Tab.issues)

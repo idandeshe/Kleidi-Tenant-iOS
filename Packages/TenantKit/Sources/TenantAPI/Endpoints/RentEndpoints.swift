@@ -27,28 +27,6 @@ extension APIClient {
 
     /// The proof the tenant uploaded with a declaration ("View proof").
     public func wireProof(declarationId: String) async throws -> WireProofFile {
-        let (data, response) = try await sendData(APIRequest(.get, "/tenant/wire-declarations/\(declarationId)/proof"))
-        let contentType = response.value(forHTTPHeaderField: "Content-Type") ?? "application/octet-stream"
-        let mimeType = contentType.split(separator: ";").first.map { $0.trimmingCharacters(in: .whitespaces) } ?? contentType
-        return WireProofFile(
-            data: data,
-            mimeType: mimeType,
-            fileName: Self.fileName(fromContentDisposition: response.value(forHTTPHeaderField: "Content-Disposition")))
-    }
-
-    /// `inline; filename="Receipt%20Oct.pdf"` → "Receipt Oct.pdf".
-    static func fileName(fromContentDisposition header: String?) -> String? {
-        guard let header else { return nil }
-        for part in header.split(separator: ";") {
-            let piece = part.trimmingCharacters(in: .whitespaces)
-            guard piece.lowercased().hasPrefix("filename=") else { continue }
-            var value = String(piece.dropFirst("filename=".count))
-            if value.hasPrefix("\""), value.hasSuffix("\""), value.count >= 2 {
-                value = String(value.dropFirst().dropLast())
-            }
-            let decoded = value.removingPercentEncoding ?? value
-            return decoded.isEmpty ? nil : decoded
-        }
-        return nil
+        try await downloadFile("/tenant/wire-declarations/\(declarationId)/proof")
     }
 }

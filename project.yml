@@ -62,8 +62,8 @@ targets:
           # Lets dev builds reach http://localhost and LAN addresses; HTTPS everywhere else.
           NSAllowsLocalNetworking: true
         NSLocalNetworkUsageDescription: Kleidi connects to a development server on your local network.
-        # Proof of a bank transfer can be photographed (localized in App/Resources/InfoPlist.xcstrings).
-        NSCameraUsageDescription: Kleidi uses the camera to photograph your bank-transfer confirmation.
+        # Proof of a bank transfer and issue photos (localized in App/Resources/InfoPlist.xcstrings).
+        NSCameraUsageDescription: Kleidi uses the camera to photograph your bank-transfer confirmation or an issue in your home.
     dependencies:
       - package: TenantKit
         product: TenantCore

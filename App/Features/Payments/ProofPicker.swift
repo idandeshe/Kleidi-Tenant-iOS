@@ -5,12 +5,44 @@ import UniformTypeIdentifiers
 import TenantAPI
 import TenantCore
 
-/// Where the proof of transfer is picked from. Same three sources as the staff app's
-/// document picker: camera, photo library, Files.
+/// Where a proof of transfer or an issue photo is picked from. Same three sources as the staff
+/// app's document picker: camera, photo library, Files.
 enum ProofPickerSource: Hashable {
     case camera, photos, files
 
     static var cameraAvailable: Bool { UIImagePickerController.isSourceTypeAvailable(.camera) }
+}
+
+/// What a picked file must satisfy — the server whitelist and size limit of the upload it is
+/// for: `.wireProof` on the Declare screen (PDF allowed, 15 MB), `.issuePhoto` on an issue
+/// (images only, 10 MB).
+struct ProofPickerRules: Sendable {
+    let mimeTypes: Set<String>
+    let maxBytes: Int
+    /// Localizable key of the "wrong type" line (also the field hint) and of the "too large" line.
+    let typeHintKey: String
+    let tooLargeKey: String
+    /// The stem of a camera / library file name ("Proof 26-10-2026 14.30.jpg").
+    let fileNamePrefix: String
+
+    static let wireProof = ProofPickerRules(
+        mimeTypes: WireProofRules.mimeTypes, maxBytes: WireProofRules.maxBytes,
+        typeHintKey: "wire.proofHint", tooLargeKey: "wire.proofTooLarge", fileNamePrefix: "Proof")
+
+    static let issuePhoto = ProofPickerRules(
+        mimeTypes: IssuePhotoRules.mimeTypes, maxBytes: IssuePhotoRules.maxBytes,
+        typeHintKey: "issues.photoHint", tooLargeKey: "issues.photoTooLarge", fileNamePrefix: "Photo")
+
+    /// What the Files picker offers.
+    var contentTypes: [UTType] { mimeTypes.sorted().compactMap { UTType(mimeType: $0) } }
+
+    func accepts(mimeType: String) -> Bool { mimeTypes.contains(mimeType.lowercased()) }
+
+    /// MIME type for a file picked from Files; nil when the server would refuse it.
+    func mimeType(forExtension ext: String) -> String? {
+        guard let mimeType = WireProofRules.mimeType(forExtension: ext), accepts(mimeType: mimeType) else { return nil }
+        return mimeType
+    }
 }
 
 /// A camera / photos / Files menu that sets the source to present (pair it with `.proofPicker`).
@@ -34,20 +66,22 @@ struct ProofPickerMenu<Label: View>: View {
 
 extension View {
     /// Presents the camera, the photo library or the Files picker while `source` is set, and hands
-    /// back a proof the server accepts — or the localized reason it can't be used (type, size,
-    /// unreadable). Camera shots and HEIC / JPEG photos are re-encoded as JPEG (no location metadata);
-    /// PNG and WebP photos and files are sent as they are.
+    /// back a file the server accepts under `rules` — or the localized reason it can't be used (type,
+    /// size, unreadable). Camera shots and HEIC / JPEG photos are re-encoded as JPEG (no location
+    /// metadata); PNG and WebP photos and files are sent as they are.
     func proofPicker(_ source: Binding<ProofPickerSource?>,
-                     onPick: @escaping @MainActor (WireProofUpload) -> Void,
+                     rules: ProofPickerRules = .wireProof,
+                     onPick: @escaping @MainActor (UploadFile) -> Void,
                      onProblem: @escaping @MainActor (String) -> Void) -> some View {
-        modifier(ProofPickerModifier(source: source, onPick: onPick, onProblem: onProblem))
+        modifier(ProofPickerModifier(source: source, rules: rules, onPick: onPick, onProblem: onProblem))
     }
 }
 
 private struct ProofPickerModifier: ViewModifier {
     @Environment(\.l10n) private var l10n
     @Binding var source: ProofPickerSource?
-    let onPick: @MainActor (WireProofUpload) -> Void
+    let rules: ProofPickerRules
+    let onPick: @MainActor (UploadFile) -> Void
     let onProblem: @MainActor (String) -> Void
     @State private var photoItem: PhotosPickerItem?
 
@@ -57,7 +91,7 @@ private struct ProofPickerModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .fileImporter(isPresented: presented(.files), allowedContentTypes: ProofImport.contentTypes) { result in
+            .fileImporter(isPresented: presented(.files), allowedContentTypes: rules.contentTypes) { result in
                 switch result {
                 case .success(let url): readFile(url)
                 case .failure: onProblem(l10n["wire.proofUnreadable"])
@@ -77,23 +111,23 @@ private struct ProofPickerModifier: ViewModifier {
     }
 
     private func accept(_ data: Data, fileName: String, mimeType: String) {
-        guard WireProofRules.accepts(mimeType: mimeType) else {
-            onProblem(l10n["wire.proofHint"])
+        guard rules.accepts(mimeType: mimeType) else {
+            onProblem(l10n[rules.typeHintKey])
             return
         }
-        guard data.count <= WireProofRules.maxBytes else {
-            onProblem(l10n["wire.proofTooLarge"])
+        guard data.count <= rules.maxBytes else {
+            onProblem(l10n[rules.tooLargeKey])
             return
         }
-        onPick(WireProofUpload(data: data, fileName: fileName, mimeType: mimeType))
+        onPick(UploadFile(data: data, fileName: fileName, mimeType: mimeType))
     }
 
     private func acceptImage(_ image: UIImage) {
-        guard let data = ProofImport.jpegData(image) else {
-            onProblem(l10n["wire.proofTooLarge"])
+        guard let data = ProofImport.jpegData(image, maxBytes: rules.maxBytes) else {
+            onProblem(l10n[rules.tooLargeKey])
             return
         }
-        accept(data, fileName: ProofImport.stampedName(extension: "jpg"), mimeType: "image/jpeg")
+        accept(data, fileName: ProofImport.stampedName(prefix: rules.fileNamePrefix, extension: "jpg"), mimeType: "image/jpeg")
     }
 
     private func loadPhoto(_ item: PhotosPickerItem) async {
@@ -105,14 +139,14 @@ private struct ProofPickerModifier: ViewModifier {
             }
             let types = item.supportedContentTypes
             if types.contains(where: { $0.conforms(to: .png) }) {
-                accept(data, fileName: ProofImport.stampedName(extension: "png"), mimeType: "image/png")
+                accept(data, fileName: ProofImport.stampedName(prefix: rules.fileNamePrefix, extension: "png"), mimeType: "image/png")
             } else if types.contains(where: { $0.conforms(to: .webP) }) {
-                accept(data, fileName: ProofImport.stampedName(extension: "webp"), mimeType: "image/webp")
+                accept(data, fileName: ProofImport.stampedName(prefix: rules.fileNamePrefix, extension: "webp"), mimeType: "image/webp")
             } else if let image = UIImage(data: data) {
                 // JPEG and HEIC (the camera's default) both go out as JPEG.
                 acceptImage(image)
             } else {
-                onProblem(l10n["wire.proofHint"])
+                onProblem(l10n[rules.typeHintKey])
             }
         } catch {
             onProblem(l10n["wire.proofUnreadable"])
@@ -122,13 +156,13 @@ private struct ProofPickerModifier: ViewModifier {
     private func readFile(_ url: URL) {
         let access = url.startAccessingSecurityScopedResource()
         defer { if access { url.stopAccessingSecurityScopedResource() } }
-        guard let mimeType = WireProofRules.mimeType(forExtension: url.pathExtension) else {
-            onProblem(l10n["wire.proofHint"])
+        guard let mimeType = rules.mimeType(forExtension: url.pathExtension) else {
+            onProblem(l10n[rules.typeHintKey])
             return
         }
         // Check the size before reading a possibly huge file into memory.
-        if let size = (try? url.resourceValues(forKeys: [.fileSizeKey]))?.fileSize, size > WireProofRules.maxBytes {
-            onProblem(l10n["wire.proofTooLarge"])
+        if let size = (try? url.resourceValues(forKeys: [.fileSizeKey]))?.fileSize, size > rules.maxBytes {
+            onProblem(l10n[rules.tooLargeKey])
             return
         }
         do {
@@ -141,21 +175,19 @@ private struct ProofPickerModifier: ViewModifier {
 
 /// Turns a picked image into the JPEG the server accepts.
 enum ProofImport {
-    /// What the Files picker offers — the server's whitelist (`WIRE_PROOF_MIME_TYPES`).
-    static let contentTypes: [UTType] = [.pdf, .jpeg, .png, .webP]
     static let jpegQuality: CGFloat = 0.85
-    /// Longest side after downscaling, when the full-size JPEG would exceed the 15 MB limit.
+    /// Longest side after downscaling, when the full-size JPEG would exceed the limit.
     static let maxSide: CGFloat = 2000
 
-    /// JPEG at 0.85; if that is still over the limit, downscaled so the longest side is
+    /// JPEG at 0.85; if that is still over `maxBytes`, downscaled so the longest side is
     /// 2000 px. nil when even the downscaled JPEG is too large (practically never).
-    static func jpegData(_ image: UIImage) -> Data? {
-        if let data = image.jpegData(compressionQuality: jpegQuality), data.count <= WireProofRules.maxBytes {
+    static func jpegData(_ image: UIImage, maxBytes: Int = WireProofRules.maxBytes) -> Data? {
+        if let data = image.jpegData(compressionQuality: jpegQuality), data.count <= maxBytes {
             return data
         }
         guard let smaller = downscaled(image, maxSide: maxSide),
               let data = smaller.jpegData(compressionQuality: jpegQuality),
-              data.count <= WireProofRules.maxBytes else { return nil }
+              data.count <= maxBytes else { return nil }
         return data
     }
 
@@ -175,11 +207,11 @@ enum ProofImport {
     }
 
     /// "Proof 26-10-2026 14.30.jpg" — a file name for a camera / library image (no slashes or colons).
-    static func stampedName(extension ext: String, now: Date = Date()) -> String {
+    static func stampedName(prefix: String = "Proof", extension ext: String, now: Date = Date()) -> String {
         let day = TenantFormatter.date(now).replacingOccurrences(of: "/", with: "-")
         let time = now.formatted(.dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits).locale(Locale(identifier: "en_GB")))
             .replacingOccurrences(of: ":", with: ".")
-        return "Proof \(day) \(time).\(ext)"
+        return "\(prefix) \(day) \(time).\(ext)"
     }
 }
 

@@ -77,8 +77,8 @@ private struct PDFKitView: UIViewRepresentable {
     func updateUIView(_ uiView: PDFView, context: Context) {}
 }
 
-/// A photo or screenshot proof: fitted, pinch to zoom, double-tap to reset.
-private struct ZoomableImage: View {
+/// A photo or screenshot (proof of transfer, issue photo): fitted, pinch to zoom, double-tap to reset.
+struct ZoomableImage: View {
     let image: UIImage
     @State private var scale: CGFloat = 1
     @State private var lastScale: CGFloat = 1

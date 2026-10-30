@@ -102,17 +102,7 @@ public enum WireProofRules {
 }
 
 /// The proof file as it goes on the wire — already JPEG when it started as a HEIC / camera photo.
-public struct WireProofUpload: Sendable, Equatable {
-    public let data: Data
-    public let fileName: String
-    public let mimeType: String
-
-    public init(data: Data, fileName: String, mimeType: String) {
-        self.data = data
-        self.fileName = fileName
-        self.mimeType = mimeType
-    }
-}
+public typealias WireProofUpload = UploadFile
 
 /// What the tenant fills in on the Declare screen (`DeclareWireDto` + the proof).
 public struct WireDeclarationDraft: Sendable, Equatable {
@@ -148,12 +138,4 @@ public struct WireDeclarationDraft: Sendable, Equatable {
 }
 
 /// `GET /tenant/wire-declarations/:id/proof` — the bytes with the type they were uploaded as.
-public struct WireProofFile: Sendable, Equatable {
-    public let data: Data
-    /// `image/jpeg`, `image/png`, `image/webp` or `application/pdf`.
-    public let mimeType: String
-    public let fileName: String?
-
-    public var isPDF: Bool { mimeType.lowercased().hasPrefix("application/pdf") }
-    public var isImage: Bool { mimeType.lowercased().hasPrefix("image/") }
-}
+public typealias WireProofFile = DownloadedFile

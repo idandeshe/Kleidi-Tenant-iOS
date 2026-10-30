@@ -7,8 +7,18 @@ iOS 17+, iPhone only. Greek and English, chosen in the app.
 
 Phase 1: language → phone + code sign-in → My lease (rent card, lease terms) → Profile.
 Phase 2: rent months with their state, "I paid by bank transfer" (months, amount, date, proof
-photo / PDF) and the declaration history on the Payments tab. Online payment and Issues are still
-placeholders.
+photo / PDF) and the declaration history on the Payments tab.
+Phase 3: Issues — report a maintenance issue (category, description, up to five photos, urgent
+flag), follow it in a thread with the property manager and reply while it is open. Online payment
+is still a placeholder.
+
+| Feature | Status |
+|---------|--------|
+| Language, phone + SMS-code sign-in, forced update | Built |
+| Home ("My lease"), lease terms, Profile | Built |
+| Payments: rent months, "I paid by bank transfer", proof viewer | Built |
+| Pay online | Placeholder ("Coming soon") |
+| Issues: list, report, thread with replies and photos | Built, not yet compiled in Xcode |
 
 ## Layout
 
@@ -16,13 +26,14 @@ placeholders.
 |------|------|
 | `project.yml` | XcodeGen spec. The `.xcodeproj` is generated, never committed. |
 | `Config/*.xcconfig` | Per-environment server URL, environment name and bundle id (Debug → dev `app.kleidi.tenant.dev`, Stage → `…stage`, Release → prod `app.kleidi.tenant`). |
-| `App/` | The app target: `Shell/` (app model, root / tabs + `AppNavigation`, routes, theme, localization plumbing, server environment) and `Features/` (Language, Auth, Home, Payments, Profile, Placeholder). |
-| `App/Features/Payments/` | `PaymentsView` (declare button, Pay-online placeholder, "Rent" months with their declaration folded in), `DeclareWireView` (the form + success state), `RentMonthRow` ("View proof", "Declare again"), `ProofPicker` (camera / photo library / Files, HEIC → JPEG), `ProofViewer` (image or PDFKit sheet), `PayOnlineCard`. |
+| `App/` | The app target: `Shell/` (app model, root / tabs + `AppNavigation`, routes, theme, localization plumbing, server environment) and `Features/` (Language, Auth, Home, Payments, Issues, Profile). |
+| `App/Features/Payments/` | `PaymentsView` (declare button, Pay-online placeholder, "Rent" months with their declaration folded in), `DeclareWireView` (the form + success state), `RentMonthRow` ("View proof", "Declare again"), `ProofPicker` (camera / photo library / Files, HEIC → JPEG; `ProofPickerRules` = `.wireProof` or `.issuePhoto`), `ProofViewer` (image or PDFKit sheet), `PayOnlineCard`. |
+| `App/Features/Issues/` | `IssuesView` (Report button, "Open" / "Resolved" groups, `IssueRow`), `ReportIssueView` (category grid, description, photo grid, urgent toggle), `IssueDetailView` (header, report card, `IssueThreadRow` bubbles and status events, composer), `IssuePhotoViewer` (full-screen photo, thumbnails). |
 | `App/Resources/InfoPlist.xcstrings` | Localized Info.plist strings (camera usage description). |
 | `App/Resources/Localizable.xcstrings` | Every user-facing string, in `en` and `el`. Keys are identifiers (`home.rent.for`), not English text. |
 | `Packages/TenantKit` | Swift package with everything testable outside the app. |
-| `…/TenantCore` | `AppLanguage`, `L10n` (string lookup in the chosen language), lease / rent values (`RentMonthStatus`, `WireDeclarationStatus`) and display formatting (`DD/MM/YYYY`, money, month labels, `YYYY-MM-DD`). Foundation only. |
-| `…/TenantAPI` | `APIClient` (phone + code session, refresh, errors), Codable models (`TenantLease`, `TenantRent`, `TenantWireDeclaration`…), endpoints, `MultipartForm` for the proof upload, Keychain token store. Foundation only. |
+| `…/TenantCore` | `AppLanguage`, `L10n` (string lookup in the chosen language), lease / rent / issue values (`RentMonthStatus`, `WireDeclarationStatus`, `TenantIssueCategory`, `TenantIssueStatus`, `IssuePhotoRules`) and display formatting (`DD/MM/YYYY`, `DD/MM/YYYY HH:mm`, money, month labels, `YYYY-MM-DD`). Foundation only. |
+| `…/TenantAPI` | `APIClient` (phone + code session, refresh, errors), Codable models (`TenantLease`, `TenantRent`, `TenantWireDeclaration`, `TenantIssue`, `TenantIssueDetail`…), endpoints, `MultipartForm` + `UploadFile` / `DownloadedFile` for the proof and photo uploads / downloads, Keychain token store. Foundation only. |
 
 ## Getting started (Mac)
 
@@ -88,7 +99,25 @@ server's dev container or a `swift:6.2` image. The SwiftUI app target needs Xcod
   Files (PDF / JPG / PNG / WebP, 15 MB). Camera shots and HEIC / JPEG photos are re-encoded as JPEG
   (quality 0.85; downscaled to 2000 px on the longest side only if the JPEG would exceed 15 MB). Success
   shows "Wire declared" with buttons to Payments and back home; Home and Payments reload their months.
-- **Issues** — still "Coming soon".
+- **Issues** — the current lease's address, "Report an issue", then the issues in two groups:
+  "Open" (received, in progress) and "Resolved" (resolved, closed). Each row: category icon tile
+  (blue while open, red when urgent, grey once settled), summary, status pill (Received / In progress /
+  Resolved / Closed), "Plumbing · reported dd/mm/yyyy" (or "resolved" / "closed" with that date), a red
+  "Urgent" line while open, and a blue dot with "New reply from your property manager" when staff did
+  something since the thread was last opened. Pull to refresh; the list reloads after a report, a reply
+  or an opened thread.
+- **Report an issue** — 3-column category grid (Plumbing / Electrical / Heating-AC / Doors-locks /
+  Building / Other), multi-line description (2000 chars), "Photos (optional, up to 5)" grid with a dashed
+  add tile (camera / photo library / Files; JPG, PNG, WebP, 10 MB each; HEIC and camera shots re-encoded as
+  JPEG), the "It is urgent…" toggle and "Send to property manager". Success lands on the new issue's
+  thread in the Issues tab (from Home the form is popped first).
+- **Issue thread** — header (summary, "category · reported date", status pill; "Resolved on <date>" or
+  "Closed by management · <reason>" once settled), the report card with its photo thumbnails (tap → full
+  screen), "Received · dd/mm/yyyy HH:mm", then the thread: property-manager messages as white bubbles on
+  the left ("Property manager · time"), the tenant's as accent bubbles on the right ("You · time"), status
+  changes centred. While `canReply` the composer sends a text and / or up to 3 photos; otherwise the note
+  "Once the issue is resolved, replies close. Still a problem? Report it again." with a link to the form.
+  Opening the thread marks it seen on the server.
 - **Profile** — unchanged.
 
 ## API contract
@@ -110,3 +139,17 @@ Phase 2 endpoints (all Bearer, `x-client: tenant-ios`):
 Errors: 400 `{ error, field }`, 404 lease, 409 a month already paid / declared, 413 proof too large,
 415 unsupported type, 429 (5 declarations per 10 minutes) — all `APIError.http(status:…)`; the Declare
 screen localizes 413 / 415 and shows the server's text for the rest.
+
+Phase 3 endpoints (`server/types/tenantIssues.types.ts`; all Bearer):
+
+| Call | Swift |
+|------|-------|
+| `GET /api/tenant/issues?leaseId=` → `{ data: TenantIssueOwnResponse[] }`, open first, then last activity desc | `client.issues(leaseId:)` → `[TenantIssue]` |
+| `POST /api/tenant/leases/:id/issues` — `multipart/form-data`, text parts **first**: `category`, `description`, `isUrgent` (`true` / `false`), then 0–5 `photo` parts (jpeg / png / webp, ≤ 10 MB each) → 201 `TenantIssueOwnDetailResponse` | `client.reportIssue(leaseId:draft:photos:)` with a `ReportIssueDraft` (`draft.form(photos:)`) → `TenantIssueDetail` |
+| `GET /api/tenant/issues/:id` → the issue fields + `messages[]` (tenant-visible, oldest first; marks the issue seen) | `client.issue(id:)` → `TenantIssueDetail` (`issue` + `messages`, decoded from the flat object) |
+| `POST /api/tenant/issues/:id/messages` — multipart: `body` (only when there is text) then 0–3 `photo` parts → 201 `TenantIssueOwnMessageResponse`; 409 when resolved / closed | `client.replyToIssue(id:draft:photos:)` with an `IssueReplyDraft` → `TenantIssueMessage` |
+| `GET /api/tenant/issues/:id/photos/:documentId` → the image bytes | `client.issuePhoto(issueId:documentId:)` → `DownloadedFile` |
+
+Statuses are shown to the tenant as Received (`new`) / In progress / Resolved / Closed; `author` is
+`tenant` or `staff` (always "Property manager", never a name). A `new` status event in `messages` is
+not drawn — the report card's "Received · date" line already says it.
