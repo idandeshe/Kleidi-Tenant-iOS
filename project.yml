@@ -57,6 +57,9 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
+        # Portrait only: App Store validation then requires opting out of iPad multitasking
+        # (the iPhone app still runs on iPad, full screen).
+        UIRequiresFullScreen: true
         ITSAppUsesNonExemptEncryption: false
         NSAppTransportSecurity:
           # Lets dev builds reach http://localhost and LAN addresses; HTTPS everywhere else.

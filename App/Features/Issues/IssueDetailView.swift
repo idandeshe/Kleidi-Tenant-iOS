@@ -222,7 +222,7 @@ struct IssueDetailView: View {
     /// Shows the thread. The list underneath reloads (its "new reply" dot, the status pill) when the
     /// thread was first opened — that marks it seen — or when something in it changed, not on every poll.
     private func apply(_ fresh: TenantIssueDetail) {
-        let changed = detail.map { $0.messages.count != fresh.messages.count || $0.status != fresh.status } ?? true
+        let changed = detail.map { $0.messages.count != fresh.messages.count || $0.issue.status != fresh.issue.status } ?? true
         detail = fresh
         if changed { navigation.issuesDidChange() }
     }
