@@ -7,7 +7,7 @@ import Testing
 
     @Test func categoriesMatchTheServerEnumInGridOrder() {
         #expect(TenantIssueCategory.all.map(\.rawValue) == ["plumbing", "electrical", "heating_ac", "doors_locks", "building", "other"])
-        #expect(TenantIssueCategory.all.allSatisfy(\.isKnown))
+        #expect(TenantIssueCategory.all.allSatisfy { $0.isKnown })
         #expect(!TenantIssueCategory(rawValue: "elevator").isKnown)
     }
 
