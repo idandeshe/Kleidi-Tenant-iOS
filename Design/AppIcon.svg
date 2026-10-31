@@ -1,0 +1,11 @@
+<!-- App icon source: the staff app's key (kleidi-ios Design/AppIcon.svg) in white on a blue gradient.
+     Coordinates are absolute (no transform) so every renderer draws the key.
+     Export at 1024×1024, opaque (no alpha), to App/Assets.xcassets/AppIcon.appiconset/AppIcon.png,
+     e.g. with rsvg-convert or a browser. ImageMagick's built-in SVG renderer drops the gradient and the key. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f78d0"/><stop offset="1" stop-color="#163f7a"/></linearGradient></defs>
+  <rect width="1024" height="1024" fill="url(#g)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="82.9" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="346.2" cy="512" r="148"/><path d="M494.2 512H784.3"/><path d="M689.6 512V630.4"/><path d="M784.3 512V594.9"/>
+  </g>
+</svg>

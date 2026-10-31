@@ -25,6 +25,7 @@ is still a placeholder.
 | Path | What |
 |------|------|
 | `project.yml` | XcodeGen spec. The `.xcodeproj` is generated, never committed. |
+| `Design/AppIcon.svg` | App icon source (the staff app's key on a blue gradient). Export at 1024×1024, opaque, to `App/Assets.xcassets/AppIcon.appiconset/AppIcon.png`. |
 | `Config/*.xcconfig` | Per-environment server URL, environment name and bundle id (Debug → dev `app.kleidi.tenant.dev`, Stage → `…stage`, Release → prod `app.kleidi.tenant`). |
 | `App/` | The app target: `Shell/` (app model, root / tabs + `AppNavigation`, routes, theme, localization plumbing, server environment) and `Features/` (Language, Auth, Home, Payments, Issues, Profile). |
 | `App/Features/Payments/` | `PaymentsView` (declare button, Pay-online placeholder, "Rent" months with their declaration folded in), `DeclareWireView` (the form + success state), `RentMonthRow` ("View proof", "Declare again"), `ProofPicker` (camera / photo library / Files, HEIC → JPEG; `ProofPickerRules` = `.wireProof` or `.issuePhoto`), `ProofViewer` (image or PDFKit sheet), `PayOnlineCard`. |
