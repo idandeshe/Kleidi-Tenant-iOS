@@ -19,7 +19,7 @@ settings:
     SWIFT_VERSION: "6.0"
     MARKETING_VERSION: "0.1.0"
     # Bump on every TestFlight upload; the server's TENANT_IOS_MIN_SUPPORTED_BUILD compares against it.
-    CURRENT_PROJECT_VERSION: "1"
+    CURRENT_PROJECT_VERSION: "3"
     DEVELOPMENT_TEAM: "99KYXV57BL"
     ENABLE_USER_SCRIPT_SANDBOXING: YES
     # iPhone only (the staff app is "1,2").
