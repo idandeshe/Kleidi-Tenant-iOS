@@ -46,7 +46,12 @@ struct ProfileView: View {
                     isConfirmingSignOutAll = true
                 }
             } footer: {
-                Text(l10n.format("profile.version", ServerEnvironment.appVersion, ServerEnvironment.clientBuild))
+                VStack(spacing: 12) {
+                    BrandMark(size: .small)
+                    Text(l10n.format("profile.version", ServerEnvironment.appVersion, ServerEnvironment.clientBuild))
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.top, 16)
             }
             .disabled(isBusy)
 

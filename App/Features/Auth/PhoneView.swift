@@ -39,6 +39,8 @@ struct PhoneView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 VStack(alignment: .leading, spacing: 8) {
+                    BrandMark(size: .large)
+                        .padding(.bottom, 16)
                     Text("Kleidi")
                         .font(.system(size: 34, weight: .bold))
                         .foregroundStyle(TenantTheme.accent)

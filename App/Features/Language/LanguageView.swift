@@ -12,6 +12,8 @@ struct LanguageView: View {
         VStack(spacing: 32) {
             Spacer()
             VStack(spacing: 8) {
+                BrandMark(size: .large)
+                    .padding(.bottom, 16)
                 Text("Kleidi")
                     .font(.system(size: 34, weight: .bold))
                     .foregroundStyle(TenantTheme.accent)

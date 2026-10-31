@@ -24,6 +24,7 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+                BrandMark(size: .small)
                 if let tenant = app.tenant {
                     Text(l10n.format("home.greeting", tenant.firstName))
                         .font(.title3.weight(.semibold))
