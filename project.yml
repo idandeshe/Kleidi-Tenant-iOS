@@ -48,7 +48,7 @@ targets:
     info:
       path: App/Info.plist
       properties:
-        CFBundleDisplayName: Kleidi
+        CFBundleDisplayName: Kleidi Tenant
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleLocalizations: [en, el]
