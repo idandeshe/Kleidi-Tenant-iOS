@@ -22,6 +22,10 @@ public struct TenantRentMonth: Decodable, Sendable, Hashable, Identifiable {
     public let period: String
     /// UTC midnight of the day the rent is owed.
     public let dueDate: Date
+    /// First day of the Rental Month this row covers; nil on older servers.
+    public let rentalMonthStart: Date?
+    /// Last day of the Rental Month this row covers; nil on older servers.
+    public let rentalMonthEnd: Date?
     public let expectedAmount: Double?
     public let status: RentMonthStatus
     public let paidAt: Date?
@@ -62,6 +66,18 @@ public struct TenantRent: Decodable, Sendable, Equatable {
     /// The months a bank transfer can still be declared for, newest first.
     public var declarableMonths: [TenantRentMonth] { months.filter(\.canDeclare) }
     public var canDeclare: Bool { months.contains { $0.canDeclare } }
+
+    /// This calendar month's row (the rent card's pill), by the server's UTC month. None before the
+    /// rent view reaches the month, and none in a lease's last weeks when the next Rental Month
+    /// starts after its end — the newest row is then an earlier month.
+    public func currentMonth(today: Date = Date()) -> TenantRentMonth? {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        let parts = calendar.dateComponents([.year, .month], from: today)
+        guard let year = parts.year, let month = parts.month else { return nil }
+        let period = String(format: "%04d-%02d", year, month)
+        return months.first { $0.period == period }
+    }
 }
 
 /// The declaration a `POST /tenant/leases/:id/wire-declarations` created (its 201 body).

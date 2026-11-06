@@ -138,11 +138,13 @@ private struct RentCard: View {
                     .textCase(.uppercase)
                     .foregroundStyle(TenantTheme.muted)
                 Spacer()
-                if let thisMonth = rent?.months.first {
-                    // The newest month's real state ("Due", "Wire confirmed by property owner"…).
+                if let thisMonth = rent?.currentMonth() {
+                    // This month's real state ("Due", "Wire confirmed by property owner"…).
                     RentMonthStatusPill(month: thisMonth)
                         .frame(maxWidth: 180, alignment: .trailing)
-                } else if let day = lease.paymentDayOfMonth {
+                } else if rent == nil, let day = lease.paymentDayOfMonth {
+                    // The payment-day guess only stands in until the rent view loads; a loaded view
+                    // without a row for this month has nothing to say.
                     Text(l10n.format("home.rent.dueDay", TenantFormatter.ordinal(day, language: l10n.language)))
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(TenantTheme.accent)
@@ -299,6 +301,29 @@ struct LeaseDetailsGrid: View {
                 DetailCell(label: l10n["lease.paymentMethod"], value: lease.paymentMethod?.label(l10n) ?? "—")
                 DetailCell(label: l10n["lease.noticePeriod"], value: lease.noticePeriodMonths.map(months) ?? "—")
                 DetailCell(label: l10n["lease.noticeDeadline"], value: lease.noticeDeadline.map { TenantFormatter.date($0) } ?? "—")
+            }
+            if let timeline = lease.rentTimeline, timeline.count > 1 {
+                rentByYear(timeline)
+            }
+        }
+    }
+
+    /// Every rent of the lease with the date it starts, marking the one of today's row.
+    private func rentByYear(_ timeline: [RentTimelineEntry]) -> some View {
+        let currentIndex = lease.currentRentIndex()
+        return VStack(alignment: .leading, spacing: 6) {
+            Text(l10n["lease.rentByYear"])
+                .font(.caption)
+                .foregroundStyle(TenantTheme.muted)
+            ForEach(Array(timeline.enumerated()), id: \.offset) { index, entry in
+                let isCurrent = index == currentIndex
+                HStack {
+                    Text(TenantFormatter.date(entry.effectiveFrom) + (isCurrent ? " · \(l10n["lease.rentNow"])" : ""))
+                    Spacer()
+                    Text(money(entry.monthlyRent))
+                }
+                .font(isCurrent ? .subheadline.weight(.semibold) : .subheadline)
+                .foregroundStyle(TenantTheme.ink)
             }
         }
     }

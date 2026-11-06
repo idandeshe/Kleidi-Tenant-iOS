@@ -1922,6 +1922,40 @@
         }
       }
     },
+    "lease.rentByYear": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενοίκιο ανά έτος"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent by year"
+          }
+        }
+      }
+    },
+    "lease.rentNow": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "τώρα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "now"
+          }
+        }
+      }
+    },
     "lease.monthlyRent": {
       "extractionState": "manual",
       "localizations": {
@@ -2479,6 +2513,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Kleidi %@ (%d)"
+          }
+        }
+      }
+    },
+    "rent.rentalMonth": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Μισθωτικός μήνας · %1$@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rental Month · %1$@"
           }
         }
       }

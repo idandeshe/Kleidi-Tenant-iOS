@@ -96,6 +96,31 @@ import TenantCore
         #expect(paid.showsProof)
     }
 
+    @Test func decodesTheRentTimelineAndFindsTodaysRow() throws {
+        #expect(try TenantJSON.decoder().decode(TenantLease.self, from: json(leaseJSON())).rentTimeline == nil)
+        var lease = leaseJSON()
+        lease["rentTimeline"] = [
+            ["effectiveFrom": "2026-03-15T00:00:00.000Z", "monthlyRent": 1000],
+            ["effectiveFrom": "2027-03-15T00:00:00.000Z", "monthlyRent": 1050],
+        ]
+        let decoded = try TenantJSON.decoder().decode(TenantLease.self, from: json(lease))
+        let feb = try #require(ISO8601DateFormatter().date(from: "2027-02-28T10:00:00Z"))
+        let march = try #require(ISO8601DateFormatter().date(from: "2027-03-01T10:00:00Z"))
+        #expect(decoded.currentRentIndex(today: feb) == 0)
+        // The March row carries the new rent from 1 March.
+        #expect(decoded.currentRentIndex(today: march) == 1)
+    }
+
+    @Test func theCurrentMonthIsFoundByItsPeriodNotByPosition() throws {
+        let rent = try TenantJSON.decoder().decode(TenantRent.self, from: json(rentJSON()))
+        let newest = try #require(rent.months.first)
+        let inThatMonth = try #require(ISO8601DateFormatter().date(from: "\(newest.period)-10T08:00:00Z"))
+        #expect(rent.currentMonth(today: inThatMonth) == newest)
+        // A lease's last weeks: this month has no row, the newest one is an earlier month.
+        let later = try #require(ISO8601DateFormatter().date(from: "2031-01-10T08:00:00Z"))
+        #expect(rent.currentMonth(today: later) == nil)
+    }
+
     @Test func unknownStatusesDecodeAsRawValues() throws {
         var month = rentMonthJSON("2026-11", status: "partially_paid", declaration: [
             "id": "w9", "status": "under_review", "declaredAmount": 400, "transferDate": "2026-11-01T00:00:00.000Z",

@@ -18,6 +18,12 @@ public struct UpcomingRent: Codable, Sendable, Hashable {
     public let effectiveFrom: Date
 }
 
+/// One rent of the lease, from the first day of the Rental Month that first charges it.
+public struct RentTimelineEntry: Codable, Sendable, Hashable {
+    public let effectiveFrom: Date
+    public let monthlyRent: Double
+}
+
 public struct TenantLease: Codable, Sendable, Hashable, Identifiable {
     public let id: String
     public let property: TenantLeaseProperty
@@ -26,9 +32,11 @@ public struct TenantLease: Codable, Sendable, Hashable, Identifiable {
     public let endDate: Date?
     /// The end date has passed while the lease is still open.
     public let isPastEnd: Bool
-    /// The rent that applies today.
+    /// The rent of today's row.
     public let monthlyRent: Double
     public let upcomingRent: UpcomingRent?
+    /// Every rent of the lease, oldest first; nil on older servers.
+    public let rentTimeline: [RentTimelineEntry]?
     public let currencyCode: String?
     public let depositAmount: Double?
     public let paymentDayOfMonth: Int?
@@ -36,6 +44,19 @@ public struct TenantLease: Codable, Sendable, Hashable, Identifiable {
     public let noticePeriodMonths: Int?
     /// Last day the tenant can give notice; null without an end date + notice period.
     public let noticeDeadline: Date?
+
+    /// The timeline entry today's row falls in: the last one whose calendar month (UTC) has
+    /// arrived, matching the server's rule that a row carries its month's rent.
+    public func currentRentIndex(today: Date = Date()) -> Int? {
+        guard let rentTimeline else { return nil }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        func month(_ date: Date) -> Int {
+            let parts = calendar.dateComponents([.year, .month], from: date)
+            return (parts.year ?? 0) * 12 + (parts.month ?? 0)
+        }
+        return rentTimeline.lastIndex { month($0.effectiveFrom) <= month(today) }
+    }
 }
 
 struct TenantLeasesResponse: Decodable, Sendable {

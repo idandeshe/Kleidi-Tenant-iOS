@@ -19,13 +19,18 @@ struct RentMonthRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .firstTextBaseline, spacing: 12) {
-                Text(TenantFormatter.period(month.period, language: l10n.language))
+                Text(month.rentalMonthTitle(l10n))
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(TenantTheme.ink)
                 Spacer()
                 Text(month.expectedAmount.map { TenantFormatter.money($0, currencyCode: currencyCode, language: l10n.language) } ?? "—")
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(TenantTheme.ink)
+            }
+            if let range = month.rentalMonthRange {
+                Text(range)
+                    .font(.caption)
+                    .foregroundStyle(TenantTheme.muted)
             }
             HStack(alignment: .center, spacing: 12) {
                 RentMonthStatusPill(month: month)
@@ -98,5 +103,19 @@ enum RentTones {
         case .overdue: return .error
         default: return .neutral
         }
+    }
+}
+
+extension TenantRentMonth {
+    /// "Rental Month · March 2027" (the month name alone on older servers).
+    func rentalMonthTitle(_ l10n: L10n) -> String {
+        let name = TenantFormatter.period(period, language: l10n.language)
+        return rentalMonthStart != nil ? l10n.format("rent.rentalMonth", name) : name
+    }
+
+    /// "15/03/2027 – 14/04/2027": the row's Rental Month; nil on older servers.
+    var rentalMonthRange: String? {
+        guard let rentalMonthStart, let rentalMonthEnd else { return nil }
+        return "\(TenantFormatter.date(rentalMonthStart)) – \(TenantFormatter.date(rentalMonthEnd))"
     }
 }

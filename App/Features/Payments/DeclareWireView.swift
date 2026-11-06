@@ -120,9 +120,16 @@ struct DeclareWireView: View {
                         Image(systemName: isSelected ? "checkmark.square.fill" : "square")
                             .font(.title3)
                             .foregroundStyle(isSelected ? TenantTheme.accent : TenantTheme.muted)
-                        Text(TenantFormatter.period(month.period, language: l10n.language))
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(TenantTheme.ink)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(month.rentalMonthTitle(l10n))
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(TenantTheme.ink)
+                            if let range = month.rentalMonthRange {
+                                Text(range)
+                                    .font(.caption)
+                                    .foregroundStyle(TenantTheme.muted)
+                            }
+                        }
                         Spacer()
                         if let expected = month.expectedAmount {
                             Text(TenantFormatter.money(expected, currencyCode: currencyCode, language: l10n.language))
@@ -233,7 +240,8 @@ struct DeclareWireView: View {
     }
 
     private func expectedTotal(_ declarable: [TenantRentMonth]) -> Double {
-        declarable.filter { selected.contains($0.period) }.reduce(0) { $0 + ($1.expectedAmount ?? 0) }
+        // In whole cents: rents with cents must not add up to 2260.1299999.
+        (declarable.filter { selected.contains($0.period) }.reduce(0) { $0 + ($1.expectedAmount ?? 0) } * 100).rounded() / 100
     }
 
     /// "812,50" or "812.50" → 812.5; nil when empty, malformed or not positive.
