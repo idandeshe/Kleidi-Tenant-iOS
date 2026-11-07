@@ -647,6 +647,23 @@
         }
       }
     },
+    "floor.doma": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Δώμα"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doma"
+          }
+        }
+      }
+    },
     "floor.ground": {
       "extractionState": "manual",
       "localizations": {
