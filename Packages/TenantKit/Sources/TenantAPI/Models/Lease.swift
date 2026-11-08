@@ -11,6 +11,16 @@ public struct TenantLeaseProperty: Codable, Sendable, Hashable {
     public let floor: FloorLevel?
     public let postalCode: String?
     public let cityName: String?
+
+    /// "Ermou 12, Apt 3" — the street, then the unit as "Apt <unit>" ("Ermou 12" without a unit,
+    /// "Apt 3" without a street); nil when both are missing. Same as the staff "street, Apt unit"
+    /// label and the Android `TenantLeaseProperty.streetLine`.
+    public var streetLine: String? {
+        let street = self.street?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let unit = self.unitNumber?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let parts = [street, unit.isEmpty ? "" : "Apt \(unit)"].filter { !$0.isEmpty }
+        return parts.isEmpty ? nil : parts.joined(separator: ", ")
+    }
 }
 
 public struct UpcomingRent: Codable, Sendable, Hashable {

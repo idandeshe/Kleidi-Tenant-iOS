@@ -359,13 +359,12 @@ private struct DetailCell: View {
     }
 }
 
-/// "Ermou 12, 3" / "2nd floor · 10563 Athens".
+/// "Ermou 12, Apt 3" / "2nd floor · 10563 Athens".
 struct LeaseAddress {
     let property: TenantLeaseProperty
 
     func firstLine(_ l10n: L10n) -> String {
-        let parts = [property.street, property.unitNumber].compactMap { $0 }.filter { !$0.isEmpty }
-        return parts.isEmpty ? l10n["lease.address.unknown"] : parts.joined(separator: ", ")
+        property.streetLine ?? l10n["lease.address.unknown"]
     }
 
     func secondLine(_ l10n: L10n) -> String? {

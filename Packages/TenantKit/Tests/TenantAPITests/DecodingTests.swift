@@ -8,6 +8,7 @@ import TenantCore
         let lease = try TenantJSON.decoder().decode(TenantLease.self, from: json(leaseJSON()))
         #expect(lease.status == .active)
         #expect(lease.property.cityName == "Athens")
+        #expect(lease.property.streetLine == "Ermou 12, Apt 3")
         #expect(lease.property.floor == FloorLevel(rawValue: "floor_2"))
         #expect(lease.monthlyRent == 800)
         #expect(lease.upcomingRent?.monthlyRent == 850)
@@ -15,6 +16,20 @@ import TenantCore
         #expect(lease.paymentMethod == .bankTransfer)
         #expect(TenantFormatter.date(lease.startDate, timeZone: TimeZone(identifier: "UTC")!) == "01/01/2026")
         #expect(lease.noticeDeadline != nil)
+    }
+
+    @Test func streetLineShowsTheUnitAsApt() {
+        func line(_ street: String?, _ unit: String?) -> String? {
+            TenantLeaseProperty(id: "p", street: street, unitNumber: unit, floor: nil, postalCode: nil, cityName: nil).streetLine
+        }
+        #expect(line("Ermou 12", "3") == "Ermou 12, Apt 3")
+        #expect(line(" Ermou 12 ", " 3B ") == "Ermou 12, Apt 3B")
+        #expect(line("Ermou 12", nil) == "Ermou 12")
+        #expect(line("Ermou 12", "  ") == "Ermou 12")
+        #expect(line(nil, "3") == "Apt 3")
+        #expect(line("", "3") == "Apt 3")
+        #expect(line(nil, nil) == nil)
+        #expect(line(" ", "") == nil)
     }
 
     @Test func nullableFieldsDecodeAsNil() throws {
