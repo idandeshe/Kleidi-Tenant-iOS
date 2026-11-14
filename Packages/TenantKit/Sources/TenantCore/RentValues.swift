@@ -6,7 +6,8 @@
 import Foundation
 
 /// How a rent month stands for the tenant: paid, declared (a bank transfer waits for staff),
-/// due, overdue, or not due yet.
+/// due, overdue, not due yet, or checking (staff asked the owner whether the rent arrived
+/// and wait for the answer; shown instead of overdue, and the tenant can still declare a wire).
 public struct RentMonthStatus: RawRepresentable, Codable, Hashable, Sendable {
     public let rawValue: String
     public init(rawValue: String) { self.rawValue = rawValue }
@@ -15,6 +16,7 @@ public struct RentMonthStatus: RawRepresentable, Codable, Hashable, Sendable {
     public static let due = RentMonthStatus(rawValue: "due")
     public static let overdue = RentMonthStatus(rawValue: "overdue")
     public static let upcoming = RentMonthStatus(rawValue: "upcoming")
+    public static let checking = RentMonthStatus(rawValue: "checking")
 
     /// "Paid" / "Πληρωμένο"… (the web `t.rent.status[status]`).
     public func label(_ l10n: L10n) -> String {

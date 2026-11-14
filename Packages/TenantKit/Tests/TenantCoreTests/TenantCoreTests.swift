@@ -75,6 +75,7 @@ import Testing
     @Test func statusLabelsFallBackToRawValue() {
         let l10n = L10n(language: .en, bundle: Bundle(for: Marker.self))
         #expect(RentMonthStatus.paid.rawValue == "paid")
+        #expect(RentMonthStatus.checking.rawValue == "checking")
         #expect(RentMonthStatus(rawValue: "brand_new").label(l10n) == "brand_new")
         #expect(WireDeclarationStatus.rejected.rawValue == "rejected")
     }
@@ -89,6 +90,9 @@ import Testing
         #expect(!RentProofLink.isShown(status: .due, confirmedByWire: false, declarationStatus: nil))
         #expect(!RentProofLink.isShown(status: .overdue, confirmedByWire: false, declarationStatus: .pending))
         #expect(!RentProofLink.isShown(status: .upcoming, confirmedByWire: false, declarationStatus: nil))
+        // A month being checked with the owner behaves like any other unpaid, undeclared month.
+        #expect(RentProofLink.isShown(status: .checking, confirmedByWire: false, declarationStatus: .rejected))
+        #expect(!RentProofLink.isShown(status: .checking, confirmedByWire: false, declarationStatus: nil))
     }
 
     @Test func periodLabelsInEachLanguage() {

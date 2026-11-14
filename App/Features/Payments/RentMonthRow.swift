@@ -93,7 +93,7 @@ struct RentMonthStatusPill: View {
     }
 }
 
-/// Pill colours per status (the web `STATUS_STYLE`); unknown values are neutral.
+/// Pill colours per status (the web `STATUS_STYLE`); upcoming, checking and unknown values are neutral.
 enum RentTones {
     static func tone(for status: RentMonthStatus) -> StatusTone {
         switch status {
@@ -101,6 +101,7 @@ enum RentTones {
         case .declared: return .accent
         case .due: return .warn
         case .overdue: return .error
+        case .upcoming, .checking: return .neutral
         default: return .neutral
         }
     }

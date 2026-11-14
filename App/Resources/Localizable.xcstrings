@@ -2704,6 +2704,23 @@
         }
       }
     },
+    "rent.status.checking": {
+      "extractionState": "manual",
+      "localizations": {
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Η πληρωμή ελέγχεται"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Payment being checked"
+          }
+        }
+      }
+    },
     "rent.status.declared": {
       "extractionState": "manual",
       "localizations": {
